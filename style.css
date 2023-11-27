@@ -228,6 +228,8 @@
             }
 
             > .text {
+                font-size: 1.5rem;
+                opacity: 0.6;
                 grid-row: 2 / 3;
                 grid-column: 2 / 6;
             }
@@ -274,8 +276,29 @@
         }
 
         > .announcement.card {
+            padding: 3rem;
             grid-column: 9 / 11;
             grid-row: 2 / 6;
+            display: grid;;
+            grid-template-rows: 1fr 2fr 1fr;
+            gap: 1.5rem;
+
+            & .news.title {
+                font-size: 1.3rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+            }
+
+            & .news.text {
+                opacity: 0.6;
+            }
+
+            > .second-news {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+            }
         }
 
         > .trending.title {
