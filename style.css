@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 :root {
     font-size: 62.5%;
     --primary-color: #f8f9fa;
-    --secondary-color: #0ea5e9;
+    --secondary-color: #0369a1;
     --background-color: #dee2e6;
     --font-main: black;
 }
@@ -10,8 +12,6 @@
 	padding: 0;
 	margin: 0;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .container {
     font-family: 'Roboto', sans-serif;
@@ -23,9 +23,110 @@
 
     > .header {
         background-color: var(--primary-color);
+        padding: 2rem;
         grid-column: 2 / 3;
         grid-row: 1 / 2;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        display: grid;
+        grid-template-columns: 1fr 4fr repeat(7, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+
+        > svg {
+            width: 20px;
+        }
+
+        > input[type="search"] {
+            height: 50%;
+            padding: 1rem;
+            background-color: var(--background-color);
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            grid-column: 2 / 6;
+            border-radius: 50px;
+            justify-self: stretch;
+        }
+
+        > input + svg {
+            grid-column: 7;
+            justify-self: end;
+        }
+
+        > .profile-small {
+            grid-column: 8;
+            width: 50px;
+        }
+
+        > .name-small {
+            justify-self: start;
+            grid-column: 9 / 10;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        > .profile-small,
+        > .profile-big {
+            border-radius: 100px;
+            border: 4px solid var(--secondary-color);
+        }
+
+        > .profile-big {
+            margin-right: 1rem;
+            width: 100px;
+        }
+
+        > .profile-big,
+        > .new,
+        > .upload,
+        > .share {
+            grid-row: 2 / 4;
+        }
+
+        > .greetings {
+            font-size: 1.5rem;
+            font-weight: bold;
+            align-self: self-end;
+        }
+
+        > .greetings,
+        > .name-big {
+            justify-self: start;
+        }
+
+        > .name-big {
+            font-size: 2.4rem;
+            font-weight: bold;
+            grid-column: 2 / 4;
+            grid-row: 3 / 4;
+            align-self: self-start;
+        }
+
+        > .new {
+            grid-column: 4 / 6;
+        }
+
+        > .upload {
+            grid-column: 6 / 8;
+        }
+
+        > .share {
+            grid-column: 8 / 10;
+        }
+
+        > .new,
+        > .upload,
+        > .share {
+            width: 75%;
+            height: 34%;
+            color: var(--primary-color);
+            background-color: var(--secondary-color);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            outline: none;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
     }
 
     > .sidebar {
@@ -73,5 +174,8 @@
         background-color: var(--background-color);
         grid-column: 2 / 3;
         grid-row: 2 / 3;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
     }
 }
